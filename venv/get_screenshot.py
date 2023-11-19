@@ -43,5 +43,5 @@ def get_system_info(MNTRSLCT):
 
 
 start = time.time()
-get_system_info(1)
+get_system_info(0)
 print(time.time()-start)
