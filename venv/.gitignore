@@ -1,7 +1,0 @@
-Lib/
-Scripts/
-__pycache__/
-pyvenv.cfg
-Tesseract/
-*.png
-*.exe
