@@ -4,6 +4,7 @@ import win32con
 import win32api
 import time
 from PIL import Image
+from pytesseract import pytesseract
 
 def get_system_info(MNTRSLCT):
 
@@ -33,7 +34,7 @@ def get_system_info(MNTRSLCT):
 
 	# Convert the RGB image to grayscale
 	gray_img = img.convert('L')
-
+	print(time.time()-start)
 	# Save the grayscale image as a PNG file
 	gray_img.save('screenshot_gray.png')
 	srcdc.DeleteDC()
@@ -41,7 +42,26 @@ def get_system_info(MNTRSLCT):
 	win32gui.ReleaseDC(hwin, hwindc)
 
 
+def readt_text_from_image():
+	path_to_tesseract = r"C:\src\GITHUB\OpenBraille\venv\Tesseract\tesseract.exe"
+	image_path = r"screenshot_gray.png"
+	  
+	# Opening the image & storing it in an image object 
+	img = Image.open(image_path) 
+	  
+	# Providing the tesseract executable 
+	# location to pytesseract library 
+	pytesseract.tesseract_cmd = path_to_tesseract 
+	  
+	# Passing the image object to image_to_string() function 
+	# This function will extract the text from the image 
+	text = pytesseract.image_to_string(img) 
+	  
+	# Displaying the extracted text 
+	print(text[:-1])
+
+
 
 start = time.time()
 get_system_info(0)
-print(time.time()-start)
+readt_text_from_image()
