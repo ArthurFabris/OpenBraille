@@ -1,0 +1,14 @@
+{
+    "Menu_de_selecao": 
+    [{
+        "1": "Aplicação",
+        "2": "Navegador Web",
+        "3": "Tela cheia",
+        "4": "Escolha uma das opcoes: 1 ou 2 ou 3"
+    }],
+    "Menu_de_contato": 
+    [{
+        "1":"Contato: arthurfabris001@gmail.com",
+        "2":"Contato: vitoreduardo03@hotmail.com"
+    }]
+}
